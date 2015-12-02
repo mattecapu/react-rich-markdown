@@ -1,0 +1,19 @@
+{
+	"input": "source/styles.css",
+	"use": [
+		"postcss-import",
+		"autoprefixer",
+		"postcss-url",
+		"cssnano"
+	],
+	"cssnano": {
+		"autoprefixer": false,
+		"postcss-calc": false,
+		"safe": true,
+		"sourcemap": true
+	},
+	"postcss-url": {
+		"url": "inline",
+		"maxSize": 100
+	}
+}
