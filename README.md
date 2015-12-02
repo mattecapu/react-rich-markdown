@@ -26,7 +26,7 @@ export class MyComponent extends React.Component {
 }
 ```
 The `options` property allows to switch off unneeded plugins
-```json
+```
 {
 	"sup": true|false,
 	"sub": true|false,
