@@ -10,13 +10,13 @@ const defaultOpts = {
 };
 
 export default class Markdown extends React.Component {
-	constructor() {
+	constructor(props) {
 
-		super();
+		super(props);
 
 		let markdown = markdownIt();
 
-		let options = Object.assign(defaultOpts, this.props.options);
+		let options = Object.assign(defaultOpts, props.options || {});
 
 		if (options.sup) {
 			const sup = require('markdown-it-sup');
