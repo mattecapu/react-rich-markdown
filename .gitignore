@@ -3,3 +3,4 @@ node_modules
 /styles.css
 /Markdown.js
 /source/styles
+/tests/tests.js
