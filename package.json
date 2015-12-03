@@ -16,7 +16,7 @@
     "build:tests": "browserify -t [ babelify ] --debug tests/tests.jsx > tests/tests.js",
     "watch": "start cmd /K npm-run-all -p watch:js watch:tests",
     "watch:js": "chokidar \"source/Markdown.jsx\" -c \"npm run build:js\"",
-    "watch:tests": "chokidar \"tests/main.jsx\" \"source/Markdown.js\" -c \"npm run build:tests\""
+    "watch:tests": "chokidar \"tests/tests.jsx\" \"source/Markdown.js\" -c \"npm run build:tests\""
   },
   "keywords": [
     "component",
