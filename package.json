@@ -2,6 +2,9 @@
   "name": "react-rich-markdown",
   "version": "1.0.0",
   "description": "A ready-to-go component to render rich Markdown snippets (md + LaTex + code sh)",
+  "repository": {
+    "url": "https://github.com/mattecapu/react-rich-markdown.git"
+  },
   "main": "Markdown.js",
   "style": "styles.css",
   "scripts": {
