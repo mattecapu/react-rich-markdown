@@ -5,10 +5,15 @@
   "main": "Markdown.js",
   "style": "styles.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build:css && npm run build:js",
+    "start": "npm-run-all build watch",
+    "test": "start tests/index.html",
+    "build": "npm-run-all -p build:css build:js -s build:tests",
     "build:css": "postcss -c postcss.json > styles.css",
-    "build:js": "babel source\\Markdown.jsx > Markdown.js"
+    "build:js": "babel source\\Markdown.jsx > Markdown.js",
+    "build:tests": "browserify -t [ babelify ] --debug tests/tests.jsx > tests/tests.js",
+    "watch": "start cmd /K npm-run-all -p watch:js watch:tests",
+    "watch:js": "chokidar \"source/Markdown.jsx\" -c \"npm run build:js\"",
+    "watch:tests": "chokidar \"tests/main.jsx\" \"source/Markdown.js\" -c \"npm run build:tests\""
   },
   "keywords": [
     "component",
@@ -31,11 +36,14 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.1.2",
-    "babel": "^6.1.18",
     "babel-cli": "^6.2.0",
     "babel-plugin-transform-react-jsx": "^6.2.0",
     "babel-preset-es2015": "^6.1.18",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "chokidar-cli": "^1.2.0",
     "cssnano": "^3.3.2",
+    "npm-run-all": "^1.3.3",
     "postcss-cli": "^2.3.2",
     "postcss-import": "^7.1.3",
     "postcss-url": "^5.0.2",
