@@ -1,6 +1,7 @@
 node_modules
+npm-debug.log*
 
 /styles.css
 /Markdown.js
 /source/styles
-/tests/tests.js
+/test/test.md

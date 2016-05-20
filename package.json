@@ -9,14 +9,12 @@
   "style": "styles.css",
   "scripts": {
     "start": "npm-run-all build watch",
-    "test": "chromium-browser tests/index.html",
-    "build": "npm-run-all -p build:css build:js -s build:tests",
+    "test": "nodemon -x 'babel-node test/index.jsx' --ext js,jsx,css",
+    "build": "npm-run-all -p build:css build:js",
     "build:css": "postcss -c postcss.json > styles.css",
     "build:js": "babel source/Markdown.jsx > Markdown.js",
-    "build:tests": "browserify -t [ babelify ] --debug tests/tests.jsx > tests/tests.js",
-    "watch": "gnome-terminal -e 'npm-run-all -p watch:js watch:tests'",
-    "watch:js": "chokidar source/Markdown.jsx -c 'npm run build:js'",
-    "watch:tests": "chokidar tests/tests.jsx source/Markdown.js -c 'npm run build:tests'"
+    "watch": "gnome-terminal -e 'npm run watch:js",
+    "watch:js": "chokidar source/Markdown.jsx -c 'npm run build:js'"
   },
   "keywords": [
     "component",
@@ -46,6 +44,7 @@
     "browserify": "13.0.1",
     "chokidar-cli": "^1.2.0",
     "cssnano": "3.6.2",
+    "express": "4.13.4",
     "npm-run-all": "2.1.1",
     "postcss-cli": "2.5.2",
     "postcss-import": "8.1.2",
