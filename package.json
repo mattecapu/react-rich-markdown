@@ -28,7 +28,7 @@
   "author": "Matteo Capucci <mattecapu@live.it>",
   "license": "ISC",
   "dependencies": {
-    "katex": "^0.5.1",
+    "katex": "^0.6.0",
     "markdown-it": "^5.0.2",
     "markdown-it-highlightjs": "^2.0.0",
     "markdown-it-math": "^3.0.2",
