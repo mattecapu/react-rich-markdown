@@ -9,14 +9,14 @@
   "style": "styles.css",
   "scripts": {
     "start": "npm-run-all build watch",
-    "test": "start tests/index.html",
+    "test": "chromium-browser tests/index.html",
     "build": "npm-run-all -p build:css build:js -s build:tests",
     "build:css": "postcss -c postcss.json > styles.css",
-    "build:js": "babel source\\Markdown.jsx > Markdown.js",
+    "build:js": "babel source/Markdown.jsx > Markdown.js",
     "build:tests": "browserify -t [ babelify ] --debug tests/tests.jsx > tests/tests.js",
-    "watch": "start cmd /K npm-run-all -p watch:js watch:tests",
-    "watch:js": "chokidar \"source/Markdown.jsx\" -c \"npm run build:js\"",
-    "watch:tests": "chokidar \"tests/tests.jsx\" \"source/Markdown.js\" -c \"npm run build:tests\""
+    "watch": "gnome-terminal -e 'npm-run-all -p watch:js watch:tests'",
+    "watch:js": "chokidar source/Markdown.jsx -c 'npm run build:js'",
+    "watch:tests": "chokidar tests/tests.jsx source/Markdown.js -c 'npm run build:tests'"
   },
   "keywords": [
     "component",
